@@ -1,0 +1,42 @@
+// Ejemplo de cambio de sintaxis scss
+// .contenedor {
+//     background-color: brown;
+
+//     p {
+//         color: white;
+//         font-size: 30px;
+//     }
+// }
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Variables
+
+$main-font: 'Montserrat', sans-serif;
+$main-font-color: #67666e;
+$brand-color: crimson;
+$hover-brand-color: rgb(155, 14, 42);
+
+// Estilos generales
+
+body {
+    font-family: $main-font;
+    color: $main-font-color;
+}
+
+a {
+    text-decoration: none;
+    color: $brand-color;
+
+    &:hover {
+        color: $hover-brand-color;
+    }
+}
+
+
