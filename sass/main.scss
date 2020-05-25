@@ -23,6 +23,16 @@ $main-font-color: #67666e;
 $brand-color: crimson;
 $hover-brand-color: rgb(155, 14, 42);
 
+// Mixins
+
+@mixin flex($a, $b) {
+    display: flex;
+    flex-direction: row;
+    justify-content: $a;
+    align-items: $b;
+}
+
+
 // Estilos generales
 
 body {
@@ -39,4 +49,38 @@ a {
     }
 }
 
+// Acordeón
 
+.accordion {
+    width: 80%;
+    max-width: 840px;
+    margin: 2rem auto;
+    box-shadow: 0 1px 3px rgba(0,0,0, 0.12),
+                1px 0 3px rgba(0,0,0, 0.12);
+
+    article {
+        border: 0.5px solid rgb(233, 233, 233);
+
+        .accordion-title {
+            padding: 1rem;
+            @include flex(space-between, center);
+
+            span {
+                font-size: 1.8rem;
+            }
+
+            .plus {
+                stroke: $brand-color;
+
+                &:hover {
+                    stroke: $hover-brand-color;
+                }
+            }
+        }
+
+        .accordion-content {
+            display: none;
+        }
+
+    }
+}
